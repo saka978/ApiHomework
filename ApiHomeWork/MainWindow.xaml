@@ -1,0 +1,74 @@
+﻿<Window x:Class="ApiHomeWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiHomeWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="280" Width="960" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="Watermark" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border Background="White" BorderBrush="#FF7D8683" BorderThickness="1"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="5,0,0,0" VerticalAlignment="Center" />
+                            <Label Margin="5,0,0,0" x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" VerticalAlignment="Center"
+                               Visibility="Collapsed" Foreground="Gray" FontFamily="Arial"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="DimGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Label Name="MyLabel" Margin="5"/>
+        <TextBlock Text="Anime title:" Name="Anime_Title" FontSize="20" Margin="5"/>
+        <TextBlock Text="Character:" Height="auto" Name="Character" Margin="5,32,10,10" FontSize="20"/>
+        <TextBlock Text="Quote:" Name="Quote" Width="700" Height="auto" HorizontalAlignment="Left" Margin="5,60,10,10" FontSize="20" TextWrapping="WrapWithOverflow"/>
+        <Button x:Name="Random_Quote_Button" Height="30" Width="170"  
+                 Content="Get Random Quote"  
+                 Margin="10,20,10,10" 
+                 VerticalAlignment="Top"  
+                 HorizontalAlignment="Right"
+                 Click="Get_Random_Quote"
+                 FontSize="12">
+        </Button>
+        <Button x:Name="Search_Quote_By_Anime" Height="30" Width="170"  
+                 Content="Get quote by anime name"  
+                 Margin="10,100,10,10" 
+                 VerticalAlignment="Top"  
+                 HorizontalAlignment="Right"
+                 Click="Get_Quote_By_Anime_Name"
+                 FontSize="12">
+        </Button>
+        <Button x:Name="Search_Quote_By_Character_Name" Height="30" Width="170"  
+                 Content="Get quote by character name"  
+                 Margin="10,60,10,10" 
+                 VerticalAlignment="Top"  
+                 HorizontalAlignment="Right"
+                 Click="Get_Quote_By_Character_Name"
+                 FontSize="12">
+        </Button>
+        <TextBox Name="Query_TextBox" Height="30" Width="170"
+                 Margin="10,150,10,10" 
+                 VerticalAlignment="Top"  
+                 HorizontalAlignment="Right"
+                 Style ="{StaticResource Watermark}"
+                 Tag="Enter name"/>
+    </Grid>
+</Window>

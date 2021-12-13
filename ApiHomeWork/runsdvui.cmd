@@ -1,0 +1,2 @@
+cd /d "C:\Users\LukasMak\source\repos\ApiHomeWork\ApiHomeWork" &msbuild "ApiHomeWork.csproj" /t:sdvViewer /p:configuration="Debug" /p:platform="Any CPU" /p:SolutionDir="C:\Users\LukasMak\source\repos\ApiHomeWork" 
+exit %errorlevel% 

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NlibFIcyorSBhSdOmSB4PtDY06QrtVZ/Y5Hvlsb5c/QOIZDrmlUelJHVTOrU+pDHnoepdZMjT/Ostew6dws7uQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LukasMak\\source\\repos\\ApiHomeWork\\ApiHomeWork\\ApiHomeWork.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LukasMak\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
